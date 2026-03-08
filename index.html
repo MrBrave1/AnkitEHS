@@ -52,6 +52,7 @@ incident-free worksites, contributing to millions of safe man-hours in large sca
 <p class="company">JN Lighitng India LLP</p>
 <p class="Company">Client : IKEA India Pvt Ltd| Project Cost:  6700 Cr</p>
 <p class="duration">Jan 2026 – Present | Sector 47 Gurugram</p>
+  
 
 <ul>
 <li>Lead the implementation of comprehensive HSE management systems for a large-scale building and mall construction project.</li>
@@ -148,14 +149,42 @@ Institute of Health and Safety Management – Delhi (2020)</p>
 </div>
 
 </section>
+<div class="section">
+<h2>Safe Man-Hours Achievement</h2>
 
+<div class="counter-box">
+<h3 id="safemanhours">Loading...</h3>
+<p>Total Safe Man-Hours Achieved</p>
+</div>
+
+</div>
 
 <footer>
 <p>© 2026 Ankit Verma | HSE Professional</p>
 </footer>
+<script>
 
+const startHours = 2000000;
+const dailyIncrease = 600;
+
+const startDate = new Date("2026-01-01"); 
+// change this to the real date when counting started
+
+const today = new Date();
+
+const timeDiff = today - startDate;
+
+const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+const totalHours = startHours + (daysPassed * dailyIncrease);
+
+document.getElementById("safemanhours").innerText =
+totalHours.toLocaleString() + " Safe Man-Hours";
+
+</script>
 </body>
 </html>
+
 
 
 
