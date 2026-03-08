@@ -1,0 +1,85 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f5f7fa;
+color:#333;
+}
+
+.header{
+background:#1e2a38;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+
+.header h1{
+margin:0;
+font-size:36px;
+}
+
+.header p{
+font-size:18px;
+margin:10px 0;
+}
+
+.contact{
+margin-top:10px;
+font-size:14px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px 20px;
+}
+
+.section{
+margin-bottom:35px;
+}
+
+.section h2{
+border-left:5px solid #1e2a38;
+padding-left:10px;
+margin-bottom:15px;
+}
+
+ul{
+padding-left:20px;
+}
+
+.job{
+margin-bottom:20px;
+}
+
+.company{
+font-weight:bold;
+}
+
+.duration{
+color:#777;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#1e2a38;
+color:white;
+margin-top:40px;
+}
+
+@media (max-width:768px){
+
+.header h1{
+font-size:28px;
+}
+
+.container{
+padding:20px;
+}
+
+}
