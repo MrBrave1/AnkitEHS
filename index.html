@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ankit Verma | EHS Manager</title>
+<title>Ankit Verma | EHS Manager | HSE Professional</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -43,9 +43,18 @@
     content: '';
     position: absolute;
     top: -60px; right: -60px;
-    width: 260px; height: 260px;
+    width: 280px; height: 280px;
     border-radius: 50%;
     background: rgba(200,169,110,0.07);
+    pointer-events: none;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 35%;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(200,169,110,0.04);
     pointer-events: none;
   }
   .header-inner {
@@ -97,6 +106,36 @@
   }
   .contact span svg { flex-shrink: 0; opacity: 0.8; }
 
+  /* ── STATS ROW ── */
+  .stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .stat-chip {
+    background: rgba(200,169,110,0.12);
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: 8px;
+    padding: 10px 18px;
+    text-align: center;
+  }
+  .stat-chip .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1.2;
+  }
+  .stat-chip .stat-lbl {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-top: 2px;
+  }
+
   /* ── PAGE WRAPPER ── */
   .page {
     max-width: 860px;
@@ -105,7 +144,7 @@
   }
 
   /* ── SECTION ── */
-  .section { margin-bottom: 36px; }
+  .section { margin-bottom: 38px; }
 
   .section-title {
     font-family: 'Playfair Display', serif;
@@ -129,9 +168,8 @@
   /* ── SUMMARY ── */
   .summary-text {
     font-size: 0.93rem;
-    line-height: 1.85;
+    line-height: 1.9;
     color: var(--ink-light);
-    max-width: 780px;
   }
 
   /* ── COMPETENCIES ── */
@@ -142,7 +180,7 @@
   }
   .tag {
     font-size: 0.75rem;
-    padding: 4px 12px;
+    padding: 5px 13px;
     background: var(--white);
     border: 1px solid var(--rule);
     border-radius: 20px;
@@ -161,7 +199,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 38px;
     position: relative;
     overflow: hidden;
   }
@@ -216,8 +254,8 @@
     background: var(--white);
     border: 1px solid var(--rule);
     border-radius: 10px;
-    padding: 22px 24px;
-    margin-bottom: 16px;
+    padding: 24px 26px;
+    margin-bottom: 18px;
     transition: box-shadow 0.2s ease;
   }
   .job:hover { box-shadow: var(--shadow); }
@@ -233,7 +271,7 @@
   }
   .job-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--ink);
   }
@@ -247,7 +285,7 @@
     border-radius: 20px;
   }
   .job-company {
-    font-size: 0.86rem;
+    font-size: 0.88rem;
     color: var(--green-light);
     font-weight: 500;
     margin-bottom: 2px;
@@ -255,30 +293,63 @@
   .job-client {
     font-size: 0.76rem;
     color: var(--ink-light);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     opacity: 0.75;
+    line-height: 1.6;
   }
+
+  /* Job sub-sections */
+  .job-subsection {
+    margin-bottom: 14px;
+  }
+  .job-subsection-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.45;
+    margin-bottom: 8px;
+  }
+
   .job ul {
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
   }
   .job ul li {
-    font-size: 0.83rem;
+    font-size: 0.84rem;
     color: var(--ink-light);
     padding-left: 16px;
     position: relative;
-    line-height: 1.65;
+    line-height: 1.7;
   }
   .job ul li::before {
     content: '';
     position: absolute;
-    left: 0; top: 8px;
+    left: 0; top: 9px;
     width: 5px; height: 5px;
     border-radius: 50%;
     background: var(--gold);
+  }
+  .job ul li strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* highlight metric pills inside bullets */
+  .metric {
+    display: inline-block;
+    background: rgba(45,106,79,0.08);
+    color: var(--green);
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 1px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(45,106,79,0.15);
+    white-space: nowrap;
   }
 
   /* ── INFO GRID ── */
@@ -299,23 +370,23 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 11px;
   }
   .edu-list li, .cert-list li, .achieve-list li, .skills-list li {
-    font-size: 0.82rem;
+    font-size: 0.83rem;
     color: var(--ink-light);
     padding-left: 18px;
     position: relative;
-    line-height: 1.55;
+    line-height: 1.6;
   }
   .edu-list li::before {
     content: '◆';
-    position: absolute; left: 0; top: 2px;
+    position: absolute; left: 0; top: 3px;
     font-size: 0.45rem;
     color: var(--gold);
   }
   .edu-degree {
-    font-size: 0.86rem;
+    font-size: 0.87rem;
     font-weight: 500;
     color: var(--ink);
     display: block;
@@ -333,11 +404,12 @@
   }
   .achieve-list li::before {
     content: '';
-    position: absolute; left: 0; top: 8px;
+    position: absolute; left: 0; top: 9px;
     width: 5px; height: 5px;
     border-radius: 50%;
     background: var(--green);
   }
+  .achieve-list li strong { color: var(--ink); font-weight: 500; }
   .skills-list li::before {
     content: '→';
     position: absolute; left: 0;
@@ -359,11 +431,13 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    .counter-banner { flex-direction: column; text-align: left; }
+    .counter-banner { flex-direction: column; }
     .counter-right { text-align: left; }
     .info-grid { grid-template-columns: 1fr; }
     .job { padding: 18px 16px; }
     .job-header { flex-direction: column; align-items: flex-start; }
+    .stats-row { gap: 8px; }
+    .stat-chip { padding: 8px 14px; }
   }
 
   /* ── PRINT ── */
@@ -375,22 +449,23 @@
     .job { border: 1px solid #ccc; box-shadow: none !important; page-break-inside: avoid; }
     .info-card { border: 1px solid #ccc; }
     .section { margin-bottom: 24px; }
+    .stat-chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ══════════════ HEADER ══════════════ -->
 <header class="header">
   <div class="header-inner">
-    <div class="header-label">EHS Professional · Infrastructure &amp; Construction</div>
+    <div class="header-label">EHS Professional · Heavy Construction &amp; Bridge Infrastructure</div>
     <h1>Ankit Verma</h1>
-    <p class="header-role">Mechanical Engineer &nbsp;|&nbsp; EHS Manager</p>
+    <p class="header-role">B.Tech Mechanical Engineer &nbsp;|&nbsp; EHS Manager &nbsp;|&nbsp; HSE &amp; Safety Compliance Specialist</p>
     <div class="header-divider"></div>
     <div class="contact">
       <span>
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Sector 47, Gurugram
+        Sector 47, Gurugram, Haryana
       </span>
       <span>
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.07 2.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -401,9 +476,34 @@
         mechanicalankitv@gmail.com
       </span>
     </div>
+
+    <!-- SNAPSHOT STATS -->
+    <div class="stats-row">
+      <div class="stat-chip">
+        <span class="stat-num">6+ Yrs</span>
+        <span class="stat-lbl">EHS Experience</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">10M+</span>
+        <span class="stat-lbl">Safe Man-Hours</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">₹10,500 Cr+</span>
+        <span class="stat-lbl">Project Value Managed</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">Zero LTI</span>
+        <span class="stat-lbl">Lost Time Incidents</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num">500+</span>
+        <span class="stat-lbl">Workforce Managed</span>
+      </div>
+    </div>
   </div>
 </header>
 
+<!-- ══════════════ BODY ══════════════ -->
 <div class="page">
 
   <!-- SAFE MAN-HOURS BANNER -->
@@ -413,8 +513,8 @@
       <div class="counter-number" id="safemanhours">—</div>
     </div>
     <div class="counter-right">
-      <div class="counter-sub">Total Safe Man-Hours Achieved</div>
-      <div class="counter-badge">⬤&nbsp; Active Tracking</div>
+      <div class="counter-sub">Cumulative Safe Man-Hours Achieved Across All Projects</div>
+      <div class="counter-badge">⬤&nbsp; Active Tracking – Updated Daily</div>
     </div>
   </div>
 
@@ -422,30 +522,48 @@
   <section class="section" aria-labelledby="summary-heading">
     <h2 class="section-title" id="summary-heading">Professional Summary</h2>
     <p class="summary-text">
-      EHS Manager with 6+ years of experience in heavy construction and bridge infrastructure projects. Specialized in HSE management for lifting and shifting of precast segments, scaffolding works, statutory compliance, hazard identification, and preventive safety controls. Proven ability to lead workforce safety programs and maintain incident-free worksites, contributing to over 10 million safe man-hours across large-scale national projects.
+      Results-driven <strong>EHS Manager and HSE Professional</strong> with over <strong>6 years of hands-on experience</strong> in health, safety, and environment management across heavy construction, bridge infrastructure, and large-scale residential projects in India. Demonstrates deep expertise in <strong>ISO 45001, OHSAS 18001</strong>, and Indian statutory safety frameworks including the <strong>Building and Other Construction Workers (BOCW) Act, Factories Act, and Indian Labour Codes 2025</strong>.
+      <br><br>
+      Proven track record of managing EHS operations for multi-contractor worksites with 500+ personnel, delivering <strong>zero Lost Time Incidents (LTI)</strong> and contributing to over <strong>10 Million Safe Man-Hours</strong>. Specialized in <strong>high-risk operations</strong> including lifting and shifting of precast bridge segments, gantry crane operations, scaffolding erection and dismantling, and heavy plant &amp; equipment management. Adept at conducting comprehensive safety audits, hazard identification and risk assessment (HIRA), Job Safety Analysis (JSA), and Method Statement reviews.
+      <br><br>
+      Strong communicator and trainer — experienced in delivering safety inductions, toolbox talks, and first aid training to diverse workforces. Holds a <strong>Project Management Diploma from IIT Guwahati</strong> and a <strong>Diploma in Industrial Safety</strong>, combining technical engineering knowledge with advanced safety management skills. Certified <strong>Professional First Aid Trainer</strong> and active member of the <strong>Fire &amp; Security Association of India (FSAI)</strong>.
     </p>
   </section>
 
   <!-- CORE COMPETENCIES -->
   <section class="section" aria-labelledby="competencies-heading">
-    <h2 class="section-title" id="competencies-heading">Core Competencies</h2>
+    <h2 class="section-title" id="competencies-heading">Core Competencies &amp; Keywords</h2>
     <div class="tag-list">
-      <span class="tag">HSE Management</span>
+      <span class="tag">EHS Management</span>
+      <span class="tag">HSE Manager</span>
       <span class="tag">ISO 45001</span>
       <span class="tag">OHSAS 18001</span>
       <span class="tag">Heavy Machinery Safety</span>
-      <span class="tag">Indian Labour Codes 2025</span>
-      <span class="tag">Risk Assessment</span>
-      <span class="tag">Hazard Identification</span>
-      <span class="tag">Safety Audits</span>
+      <span class="tag">Crane &amp; Lifting Safety</span>
+      <span class="tag">Precast Segment Operations</span>
+      <span class="tag">Scaffolding Safety</span>
+      <span class="tag">Risk Assessment (HIRA)</span>
+      <span class="tag">Job Safety Analysis (JSA)</span>
+      <span class="tag">Method Statement Review</span>
+      <span class="tag">Permit to Work (PTW)</span>
       <span class="tag">Incident Investigation</span>
+      <span class="tag">CAPA Implementation</span>
+      <span class="tag">Safety Audits &amp; Inspections</span>
       <span class="tag">Toolbox Talks</span>
-      <span class="tag">First Aid</span>
+      <span class="tag">Safety Induction Training</span>
+      <span class="tag">First Aid &amp; Emergency Response</span>
       <span class="tag">Fire Safety Management</span>
       <span class="tag">Environmental Risk Assessment</span>
-      <span class="tag">Precast Segment Lifting</span>
-      <span class="tag">Scaffolding Safety</span>
-      <span class="tag">Statutory Compliance</span>
+      <span class="tag">BOCW Act Compliance</span>
+      <span class="tag">Factories Act</span>
+      <span class="tag">Indian Labour Codes 2025</span>
+      <span class="tag">Shram Suvidha Portal</span>
+      <span class="tag">EPFO Compliance</span>
+      <span class="tag">PMC Coordination</span>
+      <span class="tag">Multi-Contractor Management</span>
+      <span class="tag">Near-Miss Reporting</span>
+      <span class="tag">PPE Management</span>
+      <span class="tag">Zero Accident Culture</span>
     </div>
   </section>
 
@@ -453,65 +571,136 @@
   <section class="section" aria-labelledby="experience-heading">
     <h2 class="section-title" id="experience-heading">Professional Experience</h2>
 
+    <!-- JOB 1 -->
     <article class="job">
       <div class="job-header">
         <span class="job-title">EHS Manager</span>
         <span class="job-duration">Jan 2026 – Present</span>
       </div>
       <div class="job-company">JN Lighting India LLP</div>
-      <div class="job-client">Client: IKEA India Pvt Ltd &nbsp;|&nbsp; Project Cost: ₹6,700 Cr &nbsp;|&nbsp; Location: Sector 47, Gurugram</div>
-      <ul>
-        <li>Lead the implementation of comprehensive HSE management systems for a large-scale building and mall construction project.</li>
-        <li>Supervise safety operations across multiple contractors and subcontractors ensuring strict adherence to statutory regulations and project safety standards.</li>
-        <li>Conduct safety audits, risk assessments, and hazard identification for high-rise construction, heavy machinery operations, and material handling.</li>
-        <li>Develop and deliver safety training programs, inductions, and toolbox talks to improve workforce safety awareness.</li>
-        <li>Coordinate with project management, consultants, and client representatives to ensure compliance with national safety regulations and international HSE standards.</li>
-        <li>Implement preventive safety measures resulting in improved incident prevention and operational safety performance.</li>
-      </ul>
+      <div class="job-client">
+        Client: IKEA India Pvt Ltd &nbsp;|&nbsp; Project: Large-Scale Retail &amp; Mall Construction &nbsp;|&nbsp; Project Cost: ₹6,700 Cr<br>
+        Location: Sector 47, Gurugram, Haryana
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">HSE System Implementation</div>
+        <ul>
+          <li>Designed and implemented a <strong>comprehensive HSE Management System</strong> for a large-scale retail and mall construction project, aligning with <strong>ISO 45001:2018</strong> and client-specific IKEA safety standards.</li>
+          <li>Established site-specific <strong>Emergency Response Plans (ERP)</strong>, fire safety protocols, and medical emergency procedures covering 1,000+ daily workforce across multiple work fronts.</li>
+          <li>Developed and maintained <strong>Project Safety Plans, Method Statements, and Risk Registers</strong> for all high-risk activities including high-rise structural works, MEP installation, and material handling.</li>
+          <li>Implemented a robust <strong>Permit to Work (PTW) system</strong> for hot work, working at height, confined space entry, and electrical isolation activities.</li>
+        </ul>
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">Compliance &amp; Auditing</div>
+        <ul>
+          <li>Supervised EHS compliance for <strong>15+ contractors and subcontractors</strong>, conducting weekly safety audits, daily site inspections, and pre-task safety briefings to ensure adherence to statutory and project standards.</li>
+          <li>Ensured 100% compliance with <strong>BOCW Act, Factories Act, and Indian Labour Codes 2025</strong> including registration, welfare provisions, and insurance requirements for all contract workers.</li>
+          <li>Managed statutory documentation and online compliance submissions on <strong>Shram Suvidha Portal, EPFO, and State BOCW websites</strong>.</li>
+          <li>Coordinated with client EHS representatives (IKEA India), PMC consultants, and regulatory authorities for third-party safety audits and inspections.</li>
+        </ul>
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">Training &amp; Safety Culture</div>
+        <ul>
+          <li>Designed and delivered <strong>comprehensive safety induction programs</strong> for all new workers and visitors; maintained 100% induction compliance on site.</li>
+          <li>Conducted <strong>daily toolbox talks, weekly safety meetings, and monthly safety awareness campaigns</strong> covering topics such as working at height, housekeeping, PPE usage, and electrical safety.</li>
+          <li>Trained supervisors and safety stewards in <strong>hazard identification, near-miss reporting, and basic first aid</strong> to build a proactive safety culture at grassroots level.</li>
+          <li>Implemented a <strong>safety observation card (SOC) system</strong> resulting in measurable improvement in near-miss reporting and behavioural safety performance.</li>
+        </ul>
+      </div>
     </article>
 
+    <!-- JOB 2 -->
     <article class="job">
       <div class="job-header">
         <span class="job-title">Senior Safety Officer</span>
         <span class="job-duration">Aug 2024 – Jan 2026</span>
       </div>
       <div class="job-company">Molethu PMC Pvt Ltd.</div>
-      <div class="job-client">Client: NBCC (India) Ltd. — PMAY Housing Project &nbsp;|&nbsp; Project Cost: ₹217 Cr &nbsp;|&nbsp; Location: Port Blair</div>
-      <ul>
-        <li>Implemented HSE systems for residential construction project with 500+ workforce.</li>
-        <li>Ensured statutory safety compliance as per NBCC standards and Indian Labour Codes.</li>
-        <li>Coordinated with PMC, engineers, and contractors to promote a strong safety culture.</li>
-        <li>Achieved 1 Million Safe Man-Hours without Lost Time Incidents (LTI).</li>
-      </ul>
+      <div class="job-client">
+        Client: NBCC (India) Ltd. &nbsp;|&nbsp; Project: PMAY Housing Project (Affordable Housing) &nbsp;|&nbsp; Project Cost: ₹217 Cr<br>
+        Location: Port Blair, Andaman &amp; Nicobar Islands
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">Site Safety Management</div>
+        <ul>
+          <li>Independently managed end-to-end EHS operations for a <strong>500+ workforce residential construction project</strong> under the Government of India's PMAY (Pradhan Mantri Awas Yojana) scheme.</li>
+          <li>Prepared and implemented site-specific <strong>HSE plans, HIRA reports, and emergency response procedures</strong> compliant with NBCC safety standards and national statutory requirements.</li>
+          <li>Conducted <strong>daily and weekly safety inspections</strong> of formwork, scaffolding, temporary structures, electrical installations, and material storage areas; issued Non-Conformance Reports (NCRs) and tracked closure.</li>
+          <li>Managed inspection and certification of <strong>lifting equipment, scaffolding, and mobile plant</strong> ensuring all equipment holds valid third-party inspection certificates before deployment.</li>
+        </ul>
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">Key Achievement</div>
+        <ul>
+          <li>Achieved <strong><span class="metric">1 Million Safe Man-Hours</span></strong> without any Lost Time Incident (LTI) — formally recognized and appreciated by <strong>NBCC (India) Ltd.</strong> through a letter of commendation.</li>
+          <li>Drove statutory compliance across the project, successfully clearing all government safety inspections and audits with zero non-compliance notices.</li>
+          <li>Established a <strong>safety reward and recognition program</strong> for contractors, improving overall safety participation and hazard reporting by 25% over six months.</li>
+        </ul>
+      </div>
     </article>
 
+    <!-- JOB 3 -->
     <article class="job">
       <div class="job-header">
         <span class="job-title">Safety Officer</span>
         <span class="job-duration">Oct 2019 – Aug 2024</span>
       </div>
       <div class="job-company">SPS Construction India Pvt. Ltd.</div>
-      <div class="job-client">Client: Assam PWD — Kumar Bhaskar Varma Bridge, Guwahati &nbsp;|&nbsp; Project Cost: ₹3,600 Cr &nbsp;|&nbsp; PMC: Systra</div>
-      <ul>
-        <li>Conducted pre-use and periodic inspections for cranes, batching plants, gantries, and heavy equipment.</li>
-        <li>Supervised safe lifting and shifting of precast bridge segments and scaffolding operations.</li>
-        <li>Delivered safety inductions and toolbox talks for 150+ workers daily.</li>
-        <li>Investigated near-misses and incidents; implemented corrective and preventive actions (CAPA).</li>
-        <li>Maintained zero-accident performance during major structural installations.</li>
-        <li>Contributed to achieving 9 Million Safe Man-Hours on the project.</li>
-      </ul>
+      <div class="job-client">
+        Client: Assam PWD &nbsp;|&nbsp; Project: Kumar Bhaskar Varma Bridge, Guwahati (Major River Bridge) &nbsp;|&nbsp; Project Cost: ₹3,600 Cr<br>
+        PMC: Systra (International PMC) &nbsp;|&nbsp; Location: Guwahati, Assam
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">High-Risk Operations Safety</div>
+        <ul>
+          <li>Served as <strong>primary Safety Officer</strong> for a mega bridge infrastructure project involving complex operations including <strong>river pile foundations, precast segment casting, launching gantry operations, and high-rise pier construction</strong>.</li>
+          <li>Supervised and monitored all <strong>crane lifting, rigging, and shifting operations for precast bridge segments</strong>, ensuring lift plans, rigging calculations, and exclusion zones were strictly implemented.</li>
+          <li>Managed safety for <strong>launching gantry erection and dismantling</strong>, traveller form operations, and cantilever segment launching — among the highest-risk activities on the project.</li>
+          <li>Conducted pre-use and periodic safety inspections of <strong>tower cranes, mobile cranes, batching plants, gantry systems, concrete pumps, and heavy earthmoving equipment</strong>.</li>
+          <li>Performed detailed <strong>Job Safety Analysis (JSA) and Method Statement reviews</strong> for all critical and non-routine activities before commencement of work.</li>
+        </ul>
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">Workforce Safety &amp; Training</div>
+        <ul>
+          <li>Delivered <strong>daily toolbox talks and safety inductions</strong> for 150+ workers across multiple workfronts; maintained attendance records and safety training logs.</li>
+          <li>Identified and reported <strong>unsafe acts and unsafe conditions</strong> through daily safety walks; tracked corrective actions to closure with site engineers and supervisors.</li>
+          <li>Investigated all incidents, near-misses, and first-aid cases; prepared <strong>RCA-based Incident Investigation Reports</strong> with root cause analysis and corrective/preventive action (CAPA) recommendations.</li>
+          <li>Maintained and updated the site <strong>accident/incident register, daily safety reports, and monthly MIS reports</strong> submitted to client and PMC as per contractual obligations.</li>
+        </ul>
+      </div>
+
+      <div class="job-subsection">
+        <div class="job-subsection-title">Key Achievement</div>
+        <ul>
+          <li>Contributed significantly to achieving <strong><span class="metric">9 Million Safe Man-Hours</span></strong> on the project — maintaining a <strong>zero fatal accident record</strong> throughout the tenure despite the highly complex and hazardous nature of work.</li>
+          <li>Awarded the <strong>Safety &amp; Maintenance Excellence Award</strong> by SPS Construction India in recognition of outstanding safety leadership and performance.</li>
+          <li>Reduced machinery-related downtime by <strong><span class="metric">15%</span></strong> through a structured pre-shift inspection and preventive maintenance coordination program.</li>
+        </ul>
+      </div>
     </article>
   </section>
 
   <!-- KEY ACHIEVEMENTS -->
   <section class="section" aria-labelledby="achievements-heading">
-    <h2 class="section-title" id="achievements-heading">Key Achievements</h2>
+    <h2 class="section-title" id="achievements-heading">Key Achievements &amp; Impact</h2>
     <ul class="achieve-list">
-      <li>Contributed to over 10 Million Safe Man-Hours across multiple major infrastructure projects.</li>
-      <li>Reduced machinery downtime by 15% through proactive safety inspections and equipment checklists.</li>
-      <li>Improved near-miss reporting by 30% by implementing a structured hazard reporting system.</li>
-      <li>Received formal appreciation from NBCC (India) Ltd. for 1 Million Safe Man-Hours without incidents.</li>
-      <li>Recognized with Safety &amp; Maintenance Excellence Award by SPS Construction India.</li>
+      <li><strong>10 Million+ Safe Man-Hours</strong> contributed across three major national construction projects — zero fatal accidents throughout entire career.</li>
+      <li><strong>Reduced machinery downtime by 15%</strong> through implementation of systematic pre-shift inspection checklists and coordination with maintenance teams.</li>
+      <li><strong>Improved near-miss reporting by 30%</strong> within six months by introducing a structured hazard observation and reporting system with positive reinforcement for workers.</li>
+      <li><strong>Formal Appreciation Certificate from NBCC (India) Ltd.</strong> for achieving 1 Million Safe Man-Hours without Lost Time Incident on the PMAY Housing Project, Port Blair.</li>
+      <li><strong>Safety &amp; Maintenance Excellence Award from SPS Construction India</strong> for outstanding safety leadership on the ₹3,600 Cr Kumar Bhaskar Varma Bridge project.</li>
+      <li><strong>Zero statutory non-compliance</strong> across all projects — successfully cleared multiple government safety audits and third-party inspections with clean records.</li>
+      <li>Managed EHS compliance for projects with a <strong>combined value exceeding ₹10,500 Crore</strong>, working with international PMC firms including Systra (France) and national clients including NBCC and IKEA India.</li>
     </ul>
   </section>
 
@@ -521,35 +710,35 @@
     <div class="info-grid">
 
       <div class="info-card">
-        <h3 class="section-title" style="font-size:0.63rem; margin-bottom:14px;">Academic</h3>
+        <h3 class="section-title" style="font-size:0.63rem; margin-bottom:14px;">Academic &amp; Professional Training</h3>
         <ul class="edu-list">
           <li>
             <span class="edu-degree">B.Tech – Mechanical Engineering</span>
-            <span class="edu-inst">IEC College of Engineering &amp; Technology, 2019</span>
+            <span class="edu-inst">IEC College of Engineering &amp; Technology, Greater Noida — 2019</span>
           </li>
           <li>
             <span class="edu-degree">Diploma in Industrial Safety</span>
-            <span class="edu-inst">Institute of Health and Safety Management, Delhi, 2020</span>
+            <span class="edu-inst">Institute of Health and Safety Management (IHSM), Delhi — 2020</span>
           </li>
           <li>
-            <span class="edu-degree">Professional First Aid Trainer</span>
-            <span class="edu-inst">Shri Arvind Foundation, Delhi, 2020</span>
+            <span class="edu-degree">Professional First Aid Trainer Certification</span>
+            <span class="edu-inst">Shri Arvind Foundation, Delhi — 2020</span>
           </li>
           <li>
-            <span class="edu-degree">Project Management Diploma</span>
-            <span class="edu-inst">IIT Guwahati, 2025</span>
+            <span class="edu-degree">Project Management Diploma (Executive Programme)</span>
+            <span class="edu-inst">Indian Institute of Technology (IIT) Guwahati — 2025</span>
           </li>
         </ul>
       </div>
 
       <div class="info-card">
-        <h3 class="section-title" style="font-size:0.63rem; margin-bottom:14px;">Certifications &amp; Recognition</h3>
+        <h3 class="section-title" style="font-size:0.63rem; margin-bottom:14px;">Certifications, Awards &amp; Memberships</h3>
         <ul class="cert-list">
-          <li>GATE 2020 – Mechanical Engineering, AIR 6306</li>
-          <li>Project Management Programme – IIT Guwahati</li>
-          <li>Safety &amp; Maintenance Excellence Award – SPS Construction India</li>
-          <li>Appreciation Certificate – NBCC India (1 Million Safe Man-Hours)</li>
-          <li>Member – Fire &amp; Security Association of India (FSAI), since 2025</li>
+          <li><strong>GATE 2020</strong> – Mechanical Engineering Stream, All India Rank (AIR) <strong>6306</strong></li>
+          <li>Project Management Executive Programme – <strong>IIT Guwahati, 2025</strong></li>
+          <li>Safety &amp; Maintenance Excellence Award – <strong>SPS Construction India Pvt. Ltd.</strong></li>
+          <li>Appreciation Certificate for 1 Million Safe Man-Hours – <strong>NBCC (India) Ltd.</strong></li>
+          <li>Member – <strong>Fire &amp; Security Association of India (FSAI)</strong>, since 2025</li>
         </ul>
       </div>
 
@@ -558,21 +747,24 @@
 
   <!-- TECHNICAL SKILLS -->
   <section class="section" aria-labelledby="skills-heading">
-    <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+    <h2 class="section-title" id="skills-heading">Technical &amp; Software Skills</h2>
     <ul class="skills-list">
-      <li>MS Office Suite (Word, Excel, PowerPoint), SAP, ERP &amp; CRM Software</li>
-      <li>AutoCAD (Basic) – Site Layout &amp; Safety Drawings</li>
-      <li>Safety Audit Tools, Inspection Checklists &amp; Risk Assessment Templates</li>
-      <li>Shram Suvidha Portal, EPFO &amp; State BOCW Websites</li>
-      <li>Labour Laws Implementation &amp; Compliance Auditing (Indian Labour Codes 2025)</li>
-      <li>Basic Web Development</li>
+      <li><strong>MS Office Suite</strong> (Word, Excel, PowerPoint, Outlook) — Safety Reports, MIS, Data Analysis</li>
+      <li><strong>SAP, ERP &amp; CRM Software</strong> — Resource and compliance tracking</li>
+      <li><strong>AutoCAD (Basic)</strong> — Site layout reading, safety signage plans, evacuation route drawings</li>
+      <li><strong>Safety Audit Tools</strong> — Inspection checklists, NCR tracking, safety observation systems</li>
+      <li><strong>Risk Assessment Templates</strong> — HIRA, JSA, Risk Registers, Method Statement preparation</li>
+      <li><strong>Statutory Portals</strong> — Shram Suvidha Portal, EPFO, State BOCW Websites, labour compliance management</li>
+      <li><strong>Labour Laws &amp; Compliance Auditing</strong> — Indian Labour Codes 2025, BOCW Act, Factories Act, ESI &amp; PF regulations</li>
+      <li><strong>Basic Web Development</strong> — HTML/CSS for internal safety communications and reporting dashboards</li>
     </ul>
   </section>
 
 </div>
 
+<!-- ══════════════ FOOTER ══════════════ -->
 <footer class="footer">
-  <p>© 2026 Ankit Verma &nbsp;|&nbsp; EHS Manager &amp; HSE Professional</p>
+  <p>© 2026 Ankit Verma &nbsp;|&nbsp; EHS Manager &amp; HSE Professional &nbsp;|&nbsp; Gurugram, Haryana &nbsp;|&nbsp; +91-7976544885</p>
 </footer>
 
 <script>
