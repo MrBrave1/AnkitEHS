@@ -54,6 +54,8 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
   line-height: 1.5;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  border: 1.4pt solid #0f1923;
 }
 
 /* ── HEADER ── */
@@ -345,15 +347,36 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
 @media print {
   @page {
     size: A4 portrait;
-    margin: 8mm 10mm 8mm 10mm;
+    margin: 6mm;
   }
-  html, body { margin: 0; padding: 0; background: #fff !important; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+    width: 210mm;
+    height: 297mm;
+  }
   .print-bar { display: none !important; }
-  .screen-wrap { background: none !important; padding: 0 !important; display: block; }
+  .screen-wrap {
+    background: none !important;
+    padding: 0 !important;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
   .screen-label { display: none !important; }
-  .paper { width: 100%; box-shadow: none !important; font-size: 7.4pt; }
+  .paper {
+    width: 100%;
+    height: 100%;
+    box-shadow: none !important;
+    font-size: 7.4pt;
+    border: 1.4pt solid #0f1923;
+    outline: 0.6pt solid #c8a96e;
+    outline-offset: -4pt;
+  }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   .job, .sb-sec, .sec { page-break-inside: avoid; break-inside: avoid; }
+  .paper, .body-wrap, .sidebar, .main { page-break-inside: avoid; break-inside: avoid; }
 }
 
 /* ── MOBILE ── */
@@ -545,8 +568,8 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
               <span class="job-title">EHS Manager</span>
               <span class="job-date">June 2026 – Present</span>
             </div>
-            <div class="job-co">Anritz O&M Pvt Ltd (Payroll - Pal and sons)</div>
-            <div class="job-meta">Client : NEEPCO, Pare HEP (110 MW) &nbsp;·&nbsp; Hydropower Plant Operation &amp; Maintenance &nbsp;·&nbsp; ₹6,700 Cr &nbsp;·&nbsp; Arunachal Pradesh</div>
+            <div class="job-co">Andritz Operation and Maintenance Pvt Ltd</div>
+            <div class="job-meta">Pare HEP (110 MW) &nbsp;·&nbsp; Hydropower Plant Operation &amp; Maintenance &nbsp;·&nbsp; ₹6,700 Cr &nbsp;·&nbsp; Arunachal Pradesh</div>
             <div class="job-sub">
               <div class="job-sub-t">HSE Implementation &amp; Compliance</div>
               <ul class="job-ul">
