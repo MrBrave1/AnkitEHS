@@ -4,357 +4,313 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ankit Verma | EHS Manager</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
-/* ── PRINT BAR ── */
+/* ── PRINT BAR (screen only) ── */
 .print-bar {
-  background: #0f1923;
-  padding: 9px 24px;
+  background: #071a33;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 200;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
 }
-.print-bar-hint { font-size: 10.5px; color: rgba(255,255,255,0.42); }
-.print-bar-hint strong { color: #c8a96e; font-weight: 500; }
+.print-bar-hint { font-size: 11px; color: rgba(255,255,255,0.55); }
+.print-bar-hint strong { color: #6fb3ff; font-weight: 700; }
 .print-btn {
-  background: #c8a96e;
-  color: #0f1923;
+  background: linear-gradient(135deg, #2f6fd6, #1550a8);
+  color: #fff;
   border: none;
-  padding: 7px 16px;
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11.5px;
-  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: opacity 0.15s;
+  gap: 6px;
+  box-shadow: 0 3px 10px rgba(47,111,214,0.45);
 }
-.print-btn:hover { opacity: 0.85; }
+.print-btn:hover { opacity: 0.9; }
 
-/* ── SCREEN WRAPPER ── */
-body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-serif; }
+/* ── BASE / SCREEN WRAPPER ── */
+body {
+  margin: 0; padding: 0;
+  background: #d9dde3;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+}
 .screen-wrap { display: flex; flex-direction: column; align-items: center; padding: 28px 16px 40px; }
-.screen-label { font-size: 8.5px; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 12px; }
+.screen-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #777; margin-bottom: 12px; }
 
-/* ── A4 PAPER ── */
+/* ── A4 PAPER — SINGLE COLUMN, ATS-SAFE ── */
 .paper {
   width: 794px;
-  background: #fff;
-  box-shadow: 0 8px 52px rgba(0,0,0,0.24), 0 1px 8px rgba(0,0,0,0.10);
-  color: #1c1c2e;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 7.4pt;
-  line-height: 1.5;
-  position: relative;
-  overflow: hidden;
+  min-height: 1123px;
+  background: #ffffff;
+  box-shadow: 0 6px 40px rgba(0,0,0,0.18);
+  color: #1a1a1a;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
   box-sizing: border-box;
-  border: 1.4pt solid #0f1923;
+  overflow: hidden;
 }
 
-/* ── HEADER ── */
+/* ══ HEADER — gradient banner, still plain selectable text (ATS-safe) ══ */
 .hd {
-  background: #0f1923;
-  padding: 18px 26px 0 26px;
+  background: linear-gradient(120deg, #0b2f66 0%, #14458f 55%, #1f63c2 100%);
+  padding: 30px 46px 22px 46px;
   position: relative;
   overflow: hidden;
 }
 .hd::before {
   content: '';
   position: absolute;
-  right: -60px; top: -60px;
-  width: 200px; height: 200px;
+  right: -70px; top: -90px;
+  width: 260px; height: 260px;
   border-radius: 50%;
-  border: 38px solid rgba(200,169,110,0.05);
+  border: 46px solid rgba(255,255,255,0.06);
 }
 .hd::after {
   content: '';
   position: absolute;
-  right: 30px; bottom: -30px;
-  width: 100px; height: 100px;
+  right: 40px; bottom: -60px;
+  width: 140px; height: 140px;
   border-radius: 50%;
-  border: 20px solid rgba(200,169,110,0.04);
+  background: rgba(255,255,255,0.05);
 }
+.hd-inner { position: relative; z-index: 2; }
 .hd-eyebrow {
-  font-size: 5.6pt;
-  letter-spacing: 2.8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: #c8a96e;
-  font-weight: 500;
-  margin-bottom: 4px;
+  color: #8fc4ff;
+  font-weight: 600;
+  margin: 0 0 6px 0;
 }
 .hd-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26pt;
-  font-weight: 700;
-  color: #fff;
-  line-height: 0.93;
-  letter-spacing: -0.2px;
-  margin-bottom: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28pt;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  margin: 0 0 4px 0;
+  line-height: 1.05;
 }
 .hd-title {
-  font-size: 6.6pt;
-  color: rgba(255,255,255,0.48);
-  font-weight: 300;
-  letter-spacing: 0.7px;
-  margin-bottom: 10px;
+  font-size: 11.5pt;
+  color: #cfe3ff;
+  font-weight: 500;
+  margin: 0 0 12px 0;
 }
 .hd-contact {
+  font-size: 9.3pt;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  gap: 3px 0;
 }
-.hd-ci {
-  font-size: 6.2pt;
-  color: rgba(255,255,255,0.58);
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.hd-ci svg { opacity: 0.60; flex-shrink: 0; }
+.hd-contact span { white-space: nowrap; }
+.hd-contact .sep { color: #6fa4e0; margin: 0 8px; }
 
-/* stats strip */
+/* stat strip inside header */
 .hd-stats {
   display: flex;
-  background: rgba(200,169,110,0.05);
-  border-top: 1px solid rgba(200,169,110,0.10);
-  margin: 0 -26px;
-  padding: 0 26px;
+  margin: 18px 0 0 0;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  padding-top: 12px;
 }
 .hd-stat {
   flex: 1;
-  padding: 7px 0 6px;
   text-align: center;
-  border-right: 1px solid rgba(200,169,110,0.09);
+  border-right: 1px solid rgba(255,255,255,0.15);
 }
 .hd-stat:last-child { border-right: none; }
 .hd-stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 10.5pt;
-  font-weight: 700;
-  color: #e8cc9a;
   display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  color: #ffe08a;
   line-height: 1.1;
 }
 .hd-stat-lbl {
-  font-size: 4.8pt;
-  color: rgba(255,255,255,0.36);
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
   display: block;
-  margin-top: 1px;
-}
-
-/* gold bar */
-.gold-bar {
-  height: 2.5px;
-  background: linear-gradient(90deg, #c8a96e 0%, #e8cc9a 50%, #c8a96e 100%);
-}
-
-/* ── TWO-COLUMN BODY ── */
-.body-wrap {
-  display: grid;
-  grid-template-columns: 162px 1fr;
-}
-
-/* ── SIDEBAR ── */
-.sidebar {
-  background: #f6f4ef;
-  border-right: 1px solid #e5dfd5;
-  padding: 13px 12px;
-}
-
-/* live counter */
-.sb-counter {
-  background: #0f1923;
-  border-radius: 5px;
-  padding: 8px 9px;
-  text-align: center;
-  margin-bottom: 12px;
-  position: relative;
-  overflow: hidden;
-}
-.sb-counter::after {
-  content: '';
-  position: absolute;
-  top: -14px; right: -14px;
-  width: 50px; height: 50px;
-  border-radius: 50%;
-  border: 10px solid rgba(200,169,110,0.07);
-}
-.sb-cl { font-size: 4.8pt; letter-spacing: 1.8px; text-transform: uppercase; color: #c8a96e; margin-bottom: 2px; position: relative; z-index: 1; }
-.sb-cn { font-family: 'Cormorant Garamond', serif; font-size: 10pt; font-weight: 700; color: #fff; line-height: 1.05; margin-bottom: 1px; position: relative; z-index: 1; }
-.sb-cs { font-size: 4.8pt; color: rgba(255,255,255,0.36); position: relative; z-index: 1; line-height: 1.35; }
-.sb-cd { font-size: 4.8pt; color: #c8a96e; margin-top: 4px; position: relative; z-index: 1; }
-
-/* sidebar section */
-.sb-sec { margin-bottom: 11px; }
-.sb-sec:last-child { margin-bottom: 0; }
-.sb-t {
-  font-size: 5.2pt;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 6.8pt;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #c8a96e;
-  margin-bottom: 6px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid #e0d8cc;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.sb-t::before {
-  content: '';
-  width: 2px; height: 7px;
-  background: #c8a96e;
-  border-radius: 2px;
-  flex-shrink: 0;
-  display: inline-block;
+  color: #a9c8ee;
+  margin-top: 2px;
 }
 
-/* tags */
-.sb-tags { display: flex; flex-wrap: wrap; gap: 2.5px; }
-.sb-tag {
-  font-size: 5.2pt;
-  padding: 1.5px 5px;
-  background: #fff;
-  border: 0.6px solid #d8d0c5;
-  border-radius: 20px;
-  color: #4a4a6a;
-  line-height: 1.5;
+/* accent stripe under header */
+.hd-stripe {
+  height: 5px;
+  background: linear-gradient(90deg, #ffb703 0%, #ffe08a 30%, #1f63c2 30%, #1f63c2 100%);
 }
 
-/* edu */
-.sb-ei { margin-bottom: 6px; }
-.sb-ei:last-child { margin-bottom: 0; }
-.sb-ed { font-size: 6.2pt; font-weight: 500; color: #1c1c2e; line-height: 1.3; margin-bottom: 0; }
-.sb-ei2 { font-size: 5.2pt; color: #888; line-height: 1.3; }
+/* ══ MAIN CONTENT ══ */
+.main-pad { padding: 22px 46px 26px 46px; }
 
-/* cert / skill lists */
-.sb-ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
-.sb-ul li { font-size: 5.8pt; color: #555; padding-left: 8px; position: relative; line-height: 1.4; }
-.sb-ul li::before { content: '✦'; position: absolute; left: 0; top: 1px; font-size: 4pt; color: #c8a96e; }
-.sb-sl li::before { content: '›'; font-size: 7.5pt; line-height: 1; top: -0.5px; color: #c8a96e; }
-.sb-ul li strong { color: #1c1c2e; font-weight: 500; }
-
-/* ── MAIN ── */
-.main { padding: 13px 18px 14px 16px; }
-
-.sec { margin-bottom: 11px; }
+.sec { margin-bottom: 15px; }
 .sec:last-child { margin-bottom: 0; }
 
 .sec-t {
-  font-size: 5.2pt;
-  font-weight: 600;
-  letter-spacing: 2.5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #c8a96e;
-  margin-bottom: 7px;
+  color: #0b2f66;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
+  margin-bottom: 9px;
 }
-.sec-t::after { content: ''; flex: 1; height: 0.6px; background: #e0d8cc; }
+.sec-t .dot {
+  width: 9px; height: 9px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #1f63c2, #ffb703);
+  flex-shrink: 0;
+  display: inline-block;
+}
+.sec-t .rule { flex: 1; height: 2px; background: linear-gradient(90deg, #cfe0f7, transparent); border-radius: 2px; }
 
 /* summary */
-.sum-p { font-size: 6.8pt; color: #3a3a5a; line-height: 1.65; font-weight: 300; margin: 0; }
-.sum-p strong { color: #0f1923; font-weight: 500; }
+.sum-p { font-size: 10pt; color: #262626; line-height: 1.6; margin: 0; }
+.sum-p strong { color: #0b2f66; }
 
-/* job */
-.job { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 0.6px solid #ede8e0; }
-.job:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-
-.job-hd { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; margin-bottom: 1px; }
-.job-title { font-family: 'Cormorant Garamond', serif; font-size: 9.5pt; font-weight: 600; color: #0f1923; line-height: 1.15; }
-.job-date {
-  font-size: 5.2pt; color: #c8a96e; font-weight: 500;
-  white-space: nowrap; padding: 1.5px 6px;
-  background: rgba(200,169,110,0.10); border-radius: 20px; flex-shrink: 0;
-}
-.job-co { font-size: 6.6pt; font-weight: 500; color: #2d6a4f; margin-bottom: 0; }
-.job-meta { font-size: 5.6pt; color: #999; margin-bottom: 5px; line-height: 1.45; }
-
-.job-sub { margin-bottom: 4px; }
-.job-sub-t { font-size: 4.8pt; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #b0b0b0; margin-bottom: 2px; }
-.job-ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
-.job-ul li { font-size: 6.3pt; color: #3a3a5a; padding-left: 9px; position: relative; line-height: 1.52; }
-.job-ul li::before { content: ''; position: absolute; left: 0; top: 5.5px; width: 3px; height: 3px; border-radius: 50%; background: #c8a96e; }
-.job-ul li strong { color: #0f1923; font-weight: 500; }
-
-/* metric pill */
-.metric {
-  display: inline-block;
-  background: rgba(45,106,79,0.08);
-  color: #2d6a4f;
-  font-weight: 500;
-  font-size: 5.8pt;
-  padding: 0.5px 5px;
+/* skills — badge pills, real selectable text, ATS-safe */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+.skill-badge {
+  font-size: 8.6pt;
+  font-weight: 600;
+  padding: 3px 10px;
   border-radius: 20px;
-  border: 0.6px solid rgba(45,106,79,0.18);
+  background: #eaf2fd;
+  color: #14458f;
+  border: 1px solid #cfe0f7;
   white-space: nowrap;
 }
 
-/* achievements grid */
-.ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; }
-.ach-item {
-  font-size: 6.2pt;
-  color: #3a3a5a;
-  padding: 4px 8px;
-  background: #faf9f6;
-  border-left: 2px solid #c8a96e;
-  border-radius: 0 3px 3px 0;
-  line-height: 1.45;
+/* job */
+.job {
+  margin-bottom: 14px;
+  padding-left: 14px;
+  border-left: 3px solid #1f63c2;
+  position: relative;
 }
-.ach-item strong { color: #0f1923; font-weight: 500; display: block; }
+.job::before {
+  content: '';
+  position: absolute;
+  left: -6.5px; top: 3px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #ffb703;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px #1f63c2;
+}
+.job:last-child { margin-bottom: 0; }
 
-/* project row – compact table-like */
-.proj-list { display: flex; flex-direction: column; gap: 2px; }
-.proj-item {
+.job-hd {
   display: flex;
-  gap: 6px;
-  font-size: 6.2pt;
-  color: #3a3a5a;
-  padding: 3px 6px;
-  background: #faf9f6;
-  border-radius: 3px;
   align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.job-title { font-family: 'Poppins', sans-serif; font-size: 11.5pt; font-weight: 700; color: #0b2f66; }
+.job-date {
+  font-size: 8.6pt; color: #14458f; font-weight: 700; white-space: nowrap;
+  background: #eaf2fd; border-radius: 20px; padding: 2px 9px;
+}
+.job-co { font-size: 10pt; font-weight: 700; color: #1a1a1a; margin: 2px 0 0 0; }
+.job-meta { font-size: 8.8pt; color: #6a6a6a; margin: 1px 0 6px 0; }
+
+.job-sub-t {
+  font-size: 8.4pt;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #ffb703;
+  background: #0b2f66;
+  display: inline-block;
+  padding: 1.5px 8px;
+  border-radius: 3px;
+  margin: 6px 0 4px 0;
+}
+.job-ul { list-style: none; padding: 0; margin: 0 0 2px 0; }
+.job-ul li {
+  font-size: 9.8pt; color: #262626; margin-bottom: 3.5px; line-height: 1.5;
+  padding-left: 14px; position: relative;
+}
+.job-ul li::before {
+  content: '▸';
+  position: absolute; left: 0; top: 0;
+  color: #1f63c2; font-weight: 700; font-size: 9pt;
+}
+.job-ul li strong { color: #0b2f66; }
+
+/* metric pill inline */
+.metric {
+  display: inline-block;
+  background: #fff4d9;
+  color: #96650a;
+  font-weight: 700;
+  font-size: 8.8pt;
+  padding: 0.5px 6px;
+  border-radius: 20px;
+  border: 1px solid #ffe08a;
+}
+
+/* achievements — colorful cards */
+.ach-grid { display: flex; flex-direction: column; gap: 5px; }
+.ach-item {
+  font-size: 9.6pt;
+  color: #262626;
+  padding: 6px 12px;
+  background: #f5f9fe;
+  border-left: 3px solid #ffb703;
+  border-radius: 0 5px 5px 0;
   line-height: 1.45;
 }
-.proj-item::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: #2d6a4f; flex-shrink: 0; margin-top: 4px; }
-.proj-item strong { color: #0f1923; font-weight: 500; white-space: nowrap; }
+.ach-item strong { color: #0b2f66; font-weight: 700; }
 
-/* paper footer */
+/* two-col plain block group for education/certs — flex wrap, linear reading order */
+.plain-block { margin-bottom: 6px; font-size: 9.8pt; color: #262626; }
+.plain-block:last-child { margin-bottom: 0; }
+.plain-block .pb-title { font-weight: 700; color: #0b2f66; }
+.plain-block .pb-sub { color: #6a6a6a; }
+
+/* footer */
 .paper-foot {
-  border-top: 1px solid #ede8e0;
-  padding: 5px 26px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #faf9f6;
+  margin-top: 8px;
+  padding: 10px 46px;
+  background: #0b2f66;
+  font-size: 8.5pt;
+  color: #cfe3ff;
+  text-align: center;
+  letter-spacing: 0.3px;
 }
-.pf-l { font-size: 5.8pt; color: #bbb; }
-.pf-r { font-size: 5.2pt; color: #c8a96e; letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+.paper-foot strong { color: #ffe08a; }
 
 /* ── PRINT ── */
 @media print {
   @page {
     size: A4 portrait;
-    margin: 6mm;
+    margin: 0mm;
   }
   html, body {
     margin: 0;
     padding: 0;
     background: #fff !important;
-    width: 210mm;
-    height: 297mm;
   }
   .print-bar { display: none !important; }
   .screen-wrap {
@@ -362,21 +318,15 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
     padding: 0 !important;
     display: block;
     width: 100%;
-    height: 100%;
   }
   .screen-label { display: none !important; }
   .paper {
     width: 100%;
-    height: 100%;
+    min-height: 0;
     box-shadow: none !important;
-    font-size: 7.4pt;
-    border: 1.4pt solid #0f1923;
-    outline: 0.6pt solid #c8a96e;
-    outline-offset: -4pt;
   }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .job, .sb-sec, .sec { page-break-inside: avoid; break-inside: avoid; }
-  .paper, .body-wrap, .sidebar, .main { page-break-inside: avoid; break-inside: avoid; }
+  .job, .sec { page-break-inside: avoid; break-inside: avoid; }
 }
 
 /* ── MOBILE ── */
@@ -384,9 +334,11 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
   .screen-wrap { padding: 0; background: #fff; }
   .screen-label { display: none; }
   .paper { width: 100%; box-shadow: none; }
-  .body-wrap { grid-template-columns: 1fr; }
-  .sidebar { border-right: none; border-bottom: 1px solid #e5dfd5; }
-  .ach-grid { grid-template-columns: 1fr; }
+  .hd { padding: 22px 20px 18px 20px; }
+  .main-pad { padding: 18px 20px 20px 20px; }
+  .hd-stats { flex-wrap: wrap; }
+  .hd-stat { flex: 1 1 33%; margin-bottom: 8px; }
+  .job-hd { flex-direction: column; gap: 2px; }
 }
 </style>
 </head>
@@ -398,7 +350,7 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
     Tip: <strong>Margins → None</strong> &nbsp;·&nbsp; <strong>Background Graphics → ON</strong> &nbsp;·&nbsp; Paper: <strong>A4</strong>
   </span>
   <button class="print-btn" onclick="window.print()">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
       <polyline points="6 9 6 2 18 2 18 9"/>
       <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
       <rect x="6" y="14" width="12" height="8"/>
@@ -408,287 +360,221 @@ body { margin: 0; padding: 0; background: #ccc9c2; font-family: 'DM Sans', sans-
 </div>
 
 <div class="screen-wrap">
-  <div class="screen-label">A4 Print Preview</div>
+  <div class="screen-label">A4 Print Preview — ATS-Friendly Single Column</div>
 
   <div class="paper">
 
     <!-- ══ HEADER ══ -->
     <div class="hd">
-      <div class="hd-eyebrow">EHS Professional &nbsp;·&nbsp; Heavy Construction &amp; Infrastructure</div>
-      <div class="hd-name">Ankit Verma</div>
-      <div class="hd-title">B.Tech Mechanical Engineer &nbsp;|&nbsp; EHS Manager &nbsp;|&nbsp; HSE &amp; Safety Compliance Specialist</div>
-      <div class="hd-contact">
-        <span class="hd-ci">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Sector 47, Gurugram, Haryana
-        </span>
-        <span class="hd-ci">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 13.1 19.79 19.79 0 0 1 3.09 4.43 2 2 0 0 1 5.07 2.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z"/></svg>
-          +91-7976544885
-        </span>
-        <span class="hd-ci">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          mechanicalankitv@gmail.com
-        </span>
-        <span class="hd-ci">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          Open to Relocation
-        </span>
-      </div>
-      <div class="hd-stats">
-        <div class="hd-stat"><span class="hd-stat-num">8+ Yrs</span><span class="hd-stat-lbl">Experience</span></div>
-        <div class="hd-stat"><span class="hd-stat-num">10 M+</span><span class="hd-stat-lbl">Safe Man-Hours</span></div>
-        <div class="hd-stat"><span class="hd-stat-num">₹10,500 Cr+</span><span class="hd-stat-lbl">Project Value</span></div>
-        <div class="hd-stat"><span class="hd-stat-num">Zero LTI</span><span class="hd-stat-lbl">Lost Time Incidents</span></div>
-        <div class="hd-stat"><span class="hd-stat-num">500+</span><span class="hd-stat-lbl">Workforce Led</span></div>
+      <div class="hd-inner">
+        <p class="hd-eyebrow">EHS Professional &nbsp;·&nbsp; Heavy Construction &amp; Infrastructure</p>
+        <h1 class="hd-name">Ankit Verma</h1>
+        <p class="hd-title">B.Tech Mechanical Engineer &nbsp;|&nbsp; EHS Manager &nbsp;|&nbsp; HSE &amp; Safety Compliance Specialist</p>
+        <p class="hd-contact">
+          <span>Sector 47, Gurugram, Haryana</span><span class="sep">|</span>
+          <span>+91-7976544885</span><span class="sep">|</span>
+          <span>mechanicalankitv@gmail.com</span><span class="sep">|</span>
+          <span>Open to Relocation</span>
+        </p>
+        <div class="hd-stats">
+          <div class="hd-stat"><span class="hd-stat-num">8+ Yrs</span><span class="hd-stat-lbl">Experience</span></div>
+          <div class="hd-stat"><span class="hd-stat-num">10 M+</span><span class="hd-stat-lbl">Safe Man-Hours</span></div>
+          <div class="hd-stat"><span class="hd-stat-num">&#8377;10,500 Cr+</span><span class="hd-stat-lbl">Project Value</span></div>
+          <div class="hd-stat"><span class="hd-stat-num">Zero LTI</span><span class="hd-stat-lbl">Lost Time Incidents</span></div>
+          <div class="hd-stat"><span class="hd-stat-num">500+</span><span class="hd-stat-lbl">Workforce Led</span></div>
+        </div>
       </div>
     </div>
+    <div class="hd-stripe"></div>
 
-    <div class="gold-bar"></div>
+    <div class="main-pad">
 
-    <!-- ══ BODY ══ -->
-    <div class="body-wrap">
+      <!-- ══ SUMMARY ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Professional Summary<span class="rule"></span></div>
+        <p class="sum-p">Results-driven Engineering Professional with <strong>8+ years of expertise</strong> in Construction Project Management, EHS Compliance, and Mechanical Operations. Proven track record managing large-scale infrastructure projects worth <strong>&#8377;10,500 Cr+</strong>, ensuring adherence to BOCW regulations, CPWD standards, and ISO 45001 safety protocols. Skilled in risk assessment, permit-to-work systems, safety audits, and incident prevention with a consistent zero-incident culture. Adept in stakeholder coordination, cost control, and site execution with hands-on experience in heavy equipment, plant operations, and contractor management across bridge, housing, and retail construction sectors.</p>
+      </div>
 
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-
-        <div class="sb-counter">
-          <div class="sb-cl">Live Counter</div>
-          <div class="sb-cn" id="safemanhours">—</div>
-          <div class="sb-cs">Safe Man-Hours Achieved</div>
-          <div class="sb-cd">⬤ Active</div>
+      <!-- ══ CORE SKILLS ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Core Skills<span class="rule"></span></div>
+        <div class="skills-wrap">
+          <span class="skill-badge">EHS Management</span>
+          <span class="skill-badge">ISO 45001</span>
+          <span class="skill-badge">OHSAS 18001</span>
+          <span class="skill-badge">HIRA / JSA</span>
+          <span class="skill-badge">Permit to Work</span>
+          <span class="skill-badge">Crane &amp; Lifting</span>
+          <span class="skill-badge">Scaffolding Safety</span>
+          <span class="skill-badge">Precast Operations</span>
+          <span class="skill-badge">Safety Audits</span>
+          <span class="skill-badge">Incident Investigation</span>
+          <span class="skill-badge">CAPA</span>
+          <span class="skill-badge">Fire Safety</span>
+          <span class="skill-badge">First Aid</span>
+          <span class="skill-badge">PPE Management</span>
+          <span class="skill-badge">BOCW Act</span>
+          <span class="skill-badge">Labour Codes 2025</span>
+          <span class="skill-badge">Shram Suvidha</span>
+          <span class="skill-badge">EPFO</span>
+          <span class="skill-badge">Method Statements</span>
+          <span class="skill-badge">Emergency Response</span>
+          <span class="skill-badge">Project Planning</span>
+          <span class="skill-badge">QA / QC</span>
+          <span class="skill-badge">Cost Control</span>
+          <span class="skill-badge">Heavy Equipment Mgmt</span>
+          <span class="skill-badge">Vendor Management</span>
+          <span class="skill-badge">DPR / DMR / MIS Reports</span>
+          <span class="skill-badge">ERP / SAP / MS Office</span>
         </div>
+      </div>
 
-        <!-- core skills -->
-        <div class="sb-sec">
-          <div class="sb-t">Core Skills</div>
-          <div class="sb-tags">
-            <span class="sb-tag">EHS Management</span>
-            <span class="sb-tag">ISO 45001</span>
-            <span class="sb-tag">OHSAS 18001</span>
-            <span class="sb-tag">HIRA / JSA</span>
-            <span class="sb-tag">Permit to Work</span>
-            <span class="sb-tag">Crane &amp; Lifting</span>
-            <span class="sb-tag">Scaffolding Safety</span>
-            <span class="sb-tag">Precast Operations</span>
-            <span class="sb-tag">Safety Audits</span>
-            <span class="sb-tag">Incident Investigation</span>
-            <span class="sb-tag">CAPA</span>
-            <span class="sb-tag">Fire Safety</span>
-            <span class="sb-tag">First Aid</span>
-            <span class="sb-tag">PPE Management</span>
-            <span class="sb-tag">BOCW Act</span>
-            <span class="sb-tag">Labour Codes 2025</span>
-            <span class="sb-tag">Shram Suvidha</span>
-            <span class="sb-tag">EPFO</span>
-            <span class="sb-tag">Method Statements</span>
-            <span class="sb-tag">Emergency Response</span>
-            <span class="sb-tag">Project Planning &amp; Monitoring</span>
-            <span class="sb-tag">QA / QC</span>
-            <span class="sb-tag">Cost Control</span>
-            <span class="sb-tag">Heavy Equipment Mgmt</span>
-            <span class="sb-tag">Vendor Management</span>
-            <span class="sb-tag">DPR / DMR / MIS Reports</span>
-            <span class="sb-tag">ERP / SAP / MS Office</span>
-          </div>
-        </div>
+      <!-- ══ EXPERIENCE ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Professional Experience<span class="rule"></span></div>
 
-        <!-- education -->
-        <div class="sb-sec">
-          <div class="sb-t">Education</div>
-          <div class="sb-ei">
-            <div class="sb-ed">B.Tech – Mechanical Engineering</div>
-            <div class="sb-ei2">IEC College of Engg. &amp; Technology, Noida — 2019</div>
+        <!-- JOB 1 -->
+        <div class="job">
+          <div class="job-hd">
+            <span class="job-title">EHS Manager</span>
+            <span class="job-date">June 2026 – Present</span>
           </div>
-          <div class="sb-ei">
-            <div class="sb-ed">Diploma – Industrial Safety</div>
-            <div class="sb-ei2">IHSM, Delhi — 2020</div>
-          </div>
-          <div class="sb-ei">
-            <div class="sb-ed">Professional First Aid Trainer</div>
-            <div class="sb-ei2">Shri Arvind Foundation, Delhi — 2020</div>
-          </div>
-          <div class="sb-ei">
-            <div class="sb-ed">Project Management Diploma</div>
-            <div class="sb-ei2">IIT Guwahati — 2025</div>
-          </div>
-          <div class="sb-ei">
-            <div class="sb-ed">IOSH Managing Safely</div>
-            <div class="sb-ei2">2026</div>
-          </div>
-          <div class="sb-ei">
-            <div class="sb-ed">OSHA 30-Hour Safety Management</div>
-            <div class="sb-ei2">2026</div>
-          </div>
-        </div>
-
-        <!-- awards & certs -->
-        <div class="sb-sec">
-          <div class="sb-t">Awards &amp; Certs</div>
-          <ul class="sb-ul">
-            <li><strong>GATE 2020</strong> – Mech. Engg., AIR 6306</li>
-            <li>Safety &amp; Maintenance Excellence Award — SPS Construction India</li>
-            <li>Appreciation Certificate — NBCC (India) Ltd. for 1M Man-Hours</li>
-            <li>Member – FSAI (Fire &amp; Security Assoc. of India), 2025</li>
+          <p class="job-co">Andritz Operation and Maintenance Pvt Ltd</p>
+          <p class="job-meta">Pare HEP (110 MW) — Hydropower Plant Operation &amp; Maintenance — &#8377;6,700 Cr — Arunachal Pradesh</p>
+          <span class="job-sub-t">HSE Implementation &amp; Compliance</span>
+          <ul class="job-ul">
+            <li>Orchestrated the site-wide HSE strategy for a large-scale <strong>Hydropower Plant Operation &amp; Maintenance (O&amp;M)</strong> project, ensuring strict adherence to <strong>ANDRITZ HSE standards</strong> and CEA safety guidelines.</li>
+            <li>Led implementation of robust <strong>Lock-Out/Tag-Out (LOTO)</strong> and <strong>Permit to Work (PTW)</strong> procedures for high-voltage electro-mechanical systems, turbine servicing, and switchyard operations.</li>
+            <li>Supervised critical high-risk activities including <strong>confined space entries</strong> (penstocks and draft tubes) and executed rigorous checklist-based lifting tool inspections for heavy generator components.</li>
+            <li>Facilitated comprehensive safety briefings and internal hazard training, driving the <strong>SAFER CARDS observation program</strong> to establish a proactive, zero-harm safety culture across the site.</li>
+            <li>Developed and executed emergency protocols tailored for hydropower hazards, including flood risk management, water rescues, and confined space extractions, maintaining compliance with <strong>ISO 45001:2018</strong>.</li>
           </ul>
         </div>
 
-        <!-- technical tools -->
-        <div class="sb-sec">
-          <div class="sb-t">Technical Tools</div>
-          <ul class="sb-ul sb-sl">
-            <li>MS Office, SAP, ERP, CRM</li>
-            <li>AutoCAD (Basic)</li>
-            <li>Safety Audit &amp; Inspection Tools</li>
-            <li>HIRA, JSA, Risk Register Templates</li>
-            <li>Shram Suvidha, EPFO, BOCW Portals</li>
-            <li>Labour Laws &amp; Compliance Auditing</li>
+        <!-- JOB 1b -->
+        <div class="job">
+          <div class="job-hd">
+            <span class="job-title">EHS Manager</span>
+            <span class="job-date">Jan 2026 – Present</span>
+          </div>
+          <p class="job-co">JN Lighting India LLP</p>
+          <p class="job-meta">Client: IKEA India Pvt Ltd — High-Rise Building Construction (12 Floors) — &#8377;6,700 Cr — Sector 47, Gurugram</p>
+          <span class="job-sub-t">HSE Implementation &amp; Compliance</span>
+          <ul class="job-ul">
+            <li>Designed and deployed a comprehensive HSE Management System aligned with ISO 45001:2018 and IKEA India safety standards for a <strong>12-storey high-rise building project</strong> with <strong>1,000+ daily workforce</strong>.</li>
+            <li>Managed critical high-rise safety operations including working at height protocols, fall protection systems, edge protection, and vertical material handling up to 12th floor level.</li>
+            <li>Established Emergency Response Plans, fire safety protocols, and a robust Permit to Work (PTW) system for hot work, working at height, confined space, and electrical isolation.</li>
+            <li>Supervised EHS compliance across <strong>15+ contractors and subcontractors</strong>; ensured 100% adherence to BOCW Act, Factories Act, and Indian Labour Codes 2025.</li>
+            <li>Managed statutory submissions on Shram Suvidha Portal, EPFO, and State BOCW websites; cleared all regulatory audits and third-party inspections.</li>
+          </ul>
+          <span class="job-sub-t">Training &amp; Safety Culture</span>
+          <ul class="job-ul">
+            <li>Delivered daily toolbox talks, weekly safety meetings, and 100%-compliant induction programs; introduced <strong>Safety Observation Card (SOC) system</strong> improving near-miss reporting measurably.</li>
+            <li>Trained supervisors in HIRA, JSA, and Method Statement review; coordinated with IKEA PMC and client representatives for joint safety audits.</li>
           </ul>
         </div>
 
-      </aside>
-
-      <!-- MAIN -->
-      <main class="main">
-
-        <!-- SUMMARY -->
-        <div class="sec">
-          <div class="sec-t">Professional Summary</div>
-          <p class="sum-p">Results-driven Engineering Professional with <strong>8+ years of expertise</strong> in <strong>Construction Project Management, EHS Compliance, and Mechanical Operations.</strong> Proven track record managing large-scale infrastructure projects worth <strong>₹10,500 Cr+</strong>, ensuring adherence to BOCW regulations, CPWD standards, and ISO 45001 safety protocols. Skilled in risk assessment, permit-to-work systems, safety audits, and incident prevention with a consistent <strong>zero-incident culture</strong>. Adept in stakeholder coordination, cost control, and site execution with hands-on experience in heavy equipment, plant operations, and contractor management across <strong>bridge, housing, and retail construction</strong> sectors.</p>
+        <!-- JOB 2 -->
+        <div class="job">
+          <div class="job-hd">
+            <span class="job-title">Senior Safety Officer</span>
+            <span class="job-date">Aug 2024 – Jan 2026</span>
+          </div>
+          <p class="job-co">Molethu PMC Pvt Ltd.</p>
+          <p class="job-meta">Client: NBCC (India) Ltd. — PMAY Housing Project — &#8377;217 Cr — Port Blair, A&amp;N Islands</p>
+          <span class="job-sub-t">Site Safety Management</span>
+          <ul class="job-ul">
+            <li>Independently managed EHS operations for a <strong>500+ workforce</strong> residential project under PM Awas Yojana; prepared HSE plans, HIRA reports, and Emergency Response procedures.</li>
+            <li>Conducted daily inspections of formwork, scaffolding, and electrical installations; issued NCRs, tracked closure, and managed third-party certification of all lifting equipment.</li>
+            <li>Achieved <span class="metric">1 Million Safe Man-Hours</span> without LTI — formally commended by NBCC (India) Ltd. through a letter of appreciation.</li>
+            <li>Launched a safety reward &amp; recognition programme improving contractor hazard reporting by <span class="metric">+25%</span> within six months.</li>
+          </ul>
         </div>
 
-        <!-- EXPERIENCE -->
-        <div class="sec">
-          <div class="sec-t">Professional Experience</div>
-
-          <!-- JOB 1 -->
-
-          <div class="job">
-            <div class="job-hd">
-              <span class="job-title">EHS Manager</span>
-              <span class="job-date">June 2026 – Present</span>
-            </div>
-            <div class="job-co">Andritz Operation and Maintenance Pvt Ltd</div>
-            <div class="job-meta">Pare HEP (110 MW) &nbsp;·&nbsp; Hydropower Plant Operation &amp; Maintenance &nbsp;·&nbsp; ₹6,700 Cr &nbsp;·&nbsp; Arunachal Pradesh</div>
-            <div class="job-sub">
-              <div class="job-sub-t">HSE Implementation &amp; Compliance</div>
-              <ul class="job-ul">
-                <li>Orchestrated the site-wide HSE strategy for a large-scale <strong>Hydropower Plant Operation &amp; Maintenance (O&amp;M)</strong> project, ensuring strict adherence to <strong>ANDRITZ HSE standards</strong> and CEA safety guidelines.</li>
-                <li>Led the implementation of robust <strong>Lock-Out/Tag-Out (LOTO)</strong> and <strong>Permit to Work (PTW)</strong> procedures for high-voltage electro-mechanical systems, turbine servicing, and switchyard operations.</li>
-                <li>Supervised critical high-risk activities including <strong>confined space entries</strong> (penstocks and draft tubes) and executed rigorous <strong>checklist-based lifting tool inspections</strong> for heavy generator components.</li>
-                <li>Facilitated comprehensive safety briefings and internal hazard training, driving the <strong>'SAFER CARDS' observation program</strong> to establish a proactive, zero-harm safety culture across the site.</li>
-                <li>Developed and executed emergency protocols tailored for hydropower hazards—including flood risk management, water rescues, and confined space extractions—maintaining compliance with <strong>ISO 45001:2018</strong>.</li>
-              </ul>
-            </div>
-            </div>
-          <div class="job">
-            <div class="job-hd">
-              <span class="job-title">EHS Manager</span>
-              <span class="job-date">Jan 2026 – Present</span>
-            </div>
-            <div class="job-co">JN Lighting India LLP</div>
-            <div class="job-meta">Client: IKEA India Pvt Ltd &nbsp;·&nbsp; High-Rise Building Construction (12 Floors) &nbsp;·&nbsp; ₹6,700 Cr &nbsp;·&nbsp; Sector 47, Gurugram</div>
-            <div class="job-sub">
-              <div class="job-sub-t">HSE Implementation &amp; Compliance</div>
-              <ul class="job-ul">
-                <li>Designed and deployed a <strong>comprehensive HSE Management System</strong> aligned with ISO 45001:2018 and IKEA India safety standards for a <strong>12-storey high-rise building project</strong> with <strong>1,000+ daily workforce</strong>.</li>
-                <li>Managed critical high-rise safety operations including <strong>working at height protocols, fall protection systems, edge protection, and vertical material handling</strong> up to 12th floor level.</li>
-                <li>Established Emergency Response Plans, fire safety protocols, and a robust <strong>Permit to Work (PTW) system</strong> for hot work, working at height, confined space, and electrical isolation.</li>
-                <li>Supervised EHS compliance across <strong>15+ contractors and subcontractors</strong>; ensured 100% adherence to BOCW Act, Factories Act, and Indian Labour Codes 2025.</li>
-                <li>Managed statutory submissions on <strong>Shram Suvidha Portal, EPFO, and State BOCW websites</strong>; cleared all regulatory audits and third-party inspections.</li>
-              </ul>
-            </div>
-            <div class="job-sub">
-              <div class="job-sub-t">Training &amp; Safety Culture</div>
-              <ul class="job-ul">
-                <li>Delivered daily toolbox talks, weekly safety meetings, and 100%-compliant induction programs; introduced <strong>Safety Observation Card (SOC) system</strong> improving near-miss reporting measurably.</li>
-                <li>Trained supervisors in HIRA, JSA, and Method Statement review; coordinated with IKEA PMC and client representatives for joint safety audits.</li>
-              </ul>
-            </div>
+        <!-- JOB 3 -->
+        <div class="job">
+          <div class="job-hd">
+            <span class="job-title">Safety Officer</span>
+            <span class="job-date">Oct 2019 – Aug 2024</span>
           </div>
-
-          <!-- JOB 2 -->
-          <div class="job">
-            <div class="job-hd">
-              <span class="job-title">Senior Safety Officer</span>
-              <span class="job-date">Aug 2024 – Jan 2026</span>
-            </div>
-            <div class="job-co">Molethu PMC Pvt Ltd.</div>
-            <div class="job-meta">Client: NBCC (India) Ltd. &nbsp;·&nbsp; PMAY Housing Project &nbsp;·&nbsp; ₹217 Cr &nbsp;·&nbsp; Port Blair, A&amp;N Islands</div>
-            <div class="job-sub">
-              <div class="job-sub-t">Site Safety Management</div>
-              <ul class="job-ul">
-                <li>Independently managed EHS operations for a <strong>500+ workforce</strong> residential project under PM Awas Yojana; prepared HSE plans, HIRA reports, and Emergency Response procedures.</li>
-                <li>Conducted daily inspections of formwork, scaffolding, and electrical installations; issued NCRs, tracked closure, and managed third-party certification of all lifting equipment.</li>
-                <li>Achieved <strong><span class="metric">1 Million Safe Man-Hours</span></strong> without LTI — formally commended by NBCC (India) Ltd. through a letter of appreciation.</li>
-                <li>Launched a <strong>safety reward &amp; recognition programme</strong> improving contractor hazard reporting by <span class="metric">+25%</span> within six months.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- JOB 3 -->
-          <div class="job">
-            <div class="job-hd">
-              <span class="job-title">Safety Officer</span>
-              <span class="job-date">Oct 2019 – Aug 2024</span>
-            </div>
-            <div class="job-co">SPS Construction India Pvt. Ltd.</div>
-            <div class="job-meta">Client: Assam PWD &nbsp;·&nbsp; Kumar Bhaskar Varma Bridge, Guwahati &nbsp;·&nbsp; ₹3,600 Cr &nbsp;·&nbsp; PMC: Systra (France)</div>
-            <div class="job-sub">
-              <div class="job-sub-t">High-Risk Operations Safety</div>
-              <ul class="job-ul">
-                <li>Primary Safety Officer for a mega bridge project — supervised <strong>river pile foundations, precast segment casting, launching gantry operations, and high-rise pier construction</strong>.</li>
-                <li>Managed all <strong>crane lifting, rigging, and shifting of precast bridge segments</strong>; enforced lift plans, rigging calculations, and exclusion zones for every critical lift.</li>
-                <li>Oversaw <strong>launching gantry erection and dismantling</strong>, traveller form operations, and cantilever segment launching — among the highest-risk activities on the project.</li>
-                <li>Performed JSA and Method Statement reviews for all critical activities; inspected tower cranes, batching plants, gantry systems, and heavy earthmoving equipment daily.</li>
-              </ul>
-            </div>
-            <div class="job-sub">
-              <div class="job-sub-t">Impact &amp; Recognition</div>
-              <ul class="job-ul">
-                <li>Contributed to <strong><span class="metric">9 Million Safe Man-Hours</span></strong> — zero fatalities throughout tenure; awarded <strong>Safety &amp; Maintenance Excellence Award</strong> by SPS Construction India.</li>
-                <li>Reduced machinery downtime by <span class="metric">15%</span> through structured pre-shift inspections and maintenance coordination with plant teams.</li>
-                <li>Issued <strong>1,000+ Purchase Orders and 200+ Work Orders</strong> using ERP systems; led site coordination with contractors, consultants, and client teams.</li>
-              </ul>
-            </div>
-          </div>
+          <p class="job-co">SPS Construction India Pvt. Ltd.</p>
+          <p class="job-meta">Client: Assam PWD — Kumar Bhaskar Varma Bridge, Guwahati — &#8377;3,600 Cr — PMC: Systra (France)</p>
+          <span class="job-sub-t">High-Risk Operations Safety</span>
+          <ul class="job-ul">
+            <li>Primary Safety Officer for a mega bridge project — supervised river pile foundations, precast segment casting, launching gantry operations, and high-rise pier construction.</li>
+            <li>Managed all crane lifting, rigging, and shifting of precast bridge segments; enforced lift plans, rigging calculations, and exclusion zones for every critical lift.</li>
+            <li>Oversaw launching gantry erection and dismantling, traveller form operations, and cantilever segment launching — among the highest-risk activities on the project.</li>
+            <li>Performed JSA and Method Statement reviews for all critical activities; inspected tower cranes, batching plants, gantry systems, and heavy earthmoving equipment daily.</li>
+          </ul>
+          <span class="job-sub-t">Impact &amp; Recognition</span>
+          <ul class="job-ul">
+            <li>Contributed to <span class="metric">9 Million Safe Man-Hours</span> — zero fatalities throughout tenure; awarded Safety &amp; Maintenance Excellence Award by SPS Construction India.</li>
+            <li>Reduced machinery downtime by <span class="metric">15%</span> through structured pre-shift inspections and maintenance coordination with plant teams.</li>
+            <li>Issued <strong>1,000+ Purchase Orders and 200+ Work Orders</strong> using ERP systems; led site coordination with contractors, consultants, and client teams.</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- KEY ACHIEVEMENTS -->
-        <div class="sec">
-          <div class="sec-t">Key Achievements &amp; Impact</div>
-          <div class="ach-grid">
-            <div class="ach-item"><strong>10 Million+ Safe Man-Hours</strong>Across 3 major national projects — zero career fatalities.</div>
-            <div class="ach-item"><strong>₹10,500 Cr+ Projects</strong>Managed end-to-end with zero statutory non-compliance.</div>
-            <div class="ach-item"><strong>Machinery Downtime –15%</strong>Via structured pre-shift inspection programme at SPS.</div>
-            <div class="ach-item"><strong>Near-Miss Reporting +25%</strong>Through hazard observation &amp; reward recognition system.</div>
-            <div class="ach-item"><strong>NBCC Letter of Appreciation</strong>For 1M Safe Man-Hours milestone, PMAY Port Blair.</div>
-            <div class="ach-item"><strong>Excellence Award – SPS Construction</strong>Safety &amp; Maintenance Excellence, Bridge Project.</div>
-          </div>
+      <!-- ══ KEY ACHIEVEMENTS ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Key Achievements &amp; Impact<span class="rule"></span></div>
+        <div class="ach-grid">
+          <div class="ach-item"><strong>10 Million+ Safe Man-Hours</strong> — across 3 major national projects, zero career fatalities.</div>
+          <div class="ach-item"><strong>&#8377;10,500 Cr+ Projects</strong> — managed end-to-end with zero statutory non-compliance.</div>
+          <div class="ach-item"><strong>Machinery Downtime –15%</strong> — via structured pre-shift inspection programme at SPS.</div>
+          <div class="ach-item"><strong>Near-Miss Reporting +25%</strong> — through hazard observation &amp; reward recognition system.</div>
+          <div class="ach-item"><strong>NBCC Letter of Appreciation</strong> — for 1M Safe Man-Hours milestone, PMAY Port Blair.</div>
+          <div class="ach-item"><strong>Excellence Award – SPS Construction</strong> — Safety &amp; Maintenance Excellence, Bridge Project.</div>
         </div>
+      </div>
 
-      </main>
-    </div>
+      <!-- ══ EDUCATION ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Education<span class="rule"></span></div>
+        <div class="plain-block"><span class="pb-title">B.Tech – Mechanical Engineering</span> — <span class="pb-sub">IEC College of Engineering &amp; Technology, Noida, 2019</span></div>
+        <div class="plain-block"><span class="pb-title">Diploma – Industrial Safety</span> — <span class="pb-sub">IHSM, Delhi, 2020</span></div>
+        <div class="plain-block"><span class="pb-title">Professional First Aid Trainer</span> — <span class="pb-sub">Shri Arvind Foundation, Delhi, 2020</span></div>
+        <div class="plain-block"><span class="pb-title">Project Management Diploma</span> — <span class="pb-sub">IIT Guwahati, 2025</span></div>
+        <div class="plain-block"><span class="pb-title">IOSH Managing Safely</span> — <span class="pb-sub">2026</span></div>
+        <div class="plain-block"><span class="pb-title">OSHA 30-Hour Safety Management</span> — <span class="pb-sub">2026</span></div>
+      </div>
+
+      <!-- ══ AWARDS & CERTS ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Awards &amp; Certifications<span class="rule"></span></div>
+        <div class="ach-grid">
+          <div class="ach-item"><strong>GATE 2020</strong> — Mechanical Engineering, AIR 6306</div>
+          <div class="ach-item">Safety &amp; Maintenance Excellence Award — SPS Construction India</div>
+          <div class="ach-item">Appreciation Certificate — NBCC (India) Ltd. for 1 Million Man-Hours</div>
+          <div class="ach-item">Member — FSAI (Fire &amp; Security Association of India), 2025</div>
+        </div>
+      </div>
+
+      <!-- ══ TECHNICAL TOOLS ══ -->
+      <div class="sec">
+        <div class="sec-t"><span class="dot"></span>Technical Tools<span class="rule"></span></div>
+        <div class="skills-wrap">
+          <span class="skill-badge">MS Office</span>
+          <span class="skill-badge">SAP</span>
+          <span class="skill-badge">ERP</span>
+          <span class="skill-badge">CRM</span>
+          <span class="skill-badge">AutoCAD (Basic)</span>
+          <span class="skill-badge">Safety Audit &amp; Inspection Tools</span>
+          <span class="skill-badge">HIRA / JSA / Risk Register</span>
+          <span class="skill-badge">Shram Suvidha</span>
+          <span class="skill-badge">EPFO</span>
+          <span class="skill-badge">BOCW Portals</span>
+          <span class="skill-badge">Labour Law Compliance Auditing</span>
+        </div>
+      </div>
+
+    </div><!-- /main-pad -->
 
     <!-- FOOTER -->
-    <div class="paper-foot">
-      <span class="pf-l">© 2026 Ankit Verma &nbsp;·&nbsp; mechanicalankitv@gmail.com &nbsp;·&nbsp; +91-7976544885</span>
-      <span class="pf-r">EHS &amp; HSE Professional</span>
-    </div>
+    <div class="paper-foot"><strong>Ankit Verma</strong> &nbsp;·&nbsp; mechanicalankitv@gmail.com &nbsp;·&nbsp; +91-7976544885 &nbsp;·&nbsp; EHS &amp; HSE Professional</div>
 
   </div><!-- /paper -->
 </div><!-- /screen-wrap -->
 
-<script>
-  const startHours = 2000000;
-  const dailyIncrease = 600;
-  const startDate = new Date("2026-01-01");
-  function updateCounter() {
-    const daysPassed = Math.floor((new Date() - startDate) / 86400000);
-    document.getElementById("safemanhours").textContent =
-      (startHours + daysPassed * dailyIncrease).toLocaleString('en-IN');
-  }
-  updateCounter();
-</script>
 </body>
 </html>
